@@ -1,0 +1,23 @@
+int Solution::gcd(int A, int B) {
+    int lowest,highest;
+    if (A>B){
+        highest = A;
+        lowest = B;
+    }
+    else{
+        highest  = B;
+        lowest = A;
+    }
+    if (lowest == 0)
+        return highest;
+    else if (highest==lowest)
+        return highest;
+    else{
+        for (int i = highest;i>1;i--){
+            if (highest%i == 0 && lowest%i == 0){
+                return i;
+            }
+        }
+        return 1;
+    }
+}
